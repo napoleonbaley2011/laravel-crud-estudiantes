@@ -12,7 +12,7 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        $estudiante = Estudiante::all();
+        $estudiante = Estudiante::where('language','Spanish')->get();
 
         return $estudiante;
     }
@@ -30,7 +30,7 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -38,7 +38,8 @@ class EstudianteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $buscar = Estudiante::find($id);
+        return $buscar;
     }
 
     /**
